@@ -1,24 +1,35 @@
-# harness ccm recommendation automation
+# 🚀 Harness CCM Recommendation Automation
 
-automatically link harness ccm recommendations to jira
+Automatically link Harness CCM recommendations to Jira — and make your cloud cost management smarter, faster, and a lot more fun! 😎
 
-## setup
+---
 
-you will need a csv file to define the mapping of Cost Category buckets to JIRA configurations.
+## 🛠️ Setup
+
+You'll need a CSV file to define how your Cost Category buckets map to JIRA configurations. Here’s the format:
 
 ```csv
 <Bucket>,<JIRA Project>,<Recommendation Issue Type>,<Anomaly Issue Type>,<Reporter>
 ```
 
-Then you need to set the Cost Category to use for the bucket definitions using `COST_CATEGORY` environment variable.
+Set the Cost Category to use for the bucket definitions using the `COST_CATEGORY` environment variable. 📦
 
-A recommendation that falls under a bucket listed in the CSV for the given Cost Category will result in a JIRA item created matching the spec from the line in the CSV.
+Whenever a recommendation falls under a bucket listed in your CSV for the given Cost Category, a shiny new Jira item will be created, matching the spec from that line. ✨
 
-## Configuration
+## ⚙️ Configuration
 
-- `CSV_FILE`: mapping of buckets to JIRA configuration
-- `JIRA_CONNECTOR_REF`: connector ID of JIRA connector to use, must start with `account.`
-- `COST_CATEGORY`: cost category name for which buckets are searched from
-- `HARNESS_URL`: url of harness instance (eg. `app.harness.io`)
-- `HARNESS_ACCOUNT_ID`: harness account id (eg. `xyz123`)
-- `HARNESS_PLATFORM_API_KEY`: harness api key (eg. `sat.xyz123.XXXXXXXXX`)
+Set these environment variables to get rolling:
+
+- `CSV_FILE`: Path to your mapping of buckets to JIRA configuration 🗂️
+- `JIRA_CONNECTOR_REF`: Connector ID of your JIRA connector (must start with `account.`) 🔗
+- `COST_CATEGORY`: Cost category name for which buckets are searched from 💸
+- `HARNESS_URL`: URL of your Harness instance (e.g., `app.harness.io`) 🌐
+- `HARNESS_ACCOUNT_ID`: Harness account ID (e.g., `xyz123`) 🆔
+- `HARNESS_PLATFORM_API_KEY`: Harness API key (e.g., `sat.xyz123.XXXXXXXXX`) 🔑
+- `MIN_SAVINGS`: (Optional) Minimum monthly savings in USD for a recommendation to be processed (e.g., `10.0` for $10) 💰
+
+---
+
+💡 **Pro tip:** Keep your CSV and environment variables up to date to ensure smooth automation!
+
+Happy automating! 🤖✨
